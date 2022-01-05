@@ -14,7 +14,7 @@ def generate_random_integers(_sum, n):
     diff = _sum - min_v * n
 
     for i in [0,1,2,-1,-2,-3]:
-        delta = random.randint(int(variance*0.65), int(variance*0.8))
+        delta = random.randint(int(variance*0.68), int(variance*0.7))
         diff -= delta
         array[i] = array[i] + delta
 
@@ -48,7 +48,7 @@ def generate_random_integers(_sum, n):
 
 
 def gen_excel(array, array2):
-    workbook = xlsxwriter.Workbook('Expenses02.xlsx')
+    workbook = xlsxwriter.Workbook('พฤศจิกายน.xlsx')
     worksheet = workbook.add_worksheet()
 
     col = 0
@@ -63,6 +63,6 @@ def gen_excel(array, array2):
     workbook.close()
     return None
 
-arr1 = generate_random_integers(35309218,31)
-arr2 = generate_random_integers(1612588,31)
+arr1 = generate_random_integers(35196825,30) ## ยอดขายที่ต้องเสียภาษี
+arr2 = generate_random_integers(2057440,30) ## ยอดขายที่ได้รับยกเว้น
 gen_excel(arr1, arr2)
