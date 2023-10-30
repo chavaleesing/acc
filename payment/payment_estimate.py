@@ -21,7 +21,7 @@ def random_generate(month_payment_estimate, amount_slip_list):
     return array
 
 def generate_excel(estimate_result, amount_slip_list):
-    workbook = xlsxwriter.Workbook('พค.xlsx')
+    workbook = xlsxwriter.Workbook('กย.xlsx')
     worksheet = workbook.add_worksheet()
     from_date = datetime(2023,3,1).date()
     row = 0
@@ -38,7 +38,8 @@ def generate_excel(estimate_result, amount_slip_list):
         from_date = from_date + timedelta(days=1)
     workbook.close()
 
-month_payment_estimate = 1737775
-amount_slip_list=[13,16,17,11,12,8,20,0,9,9,15,10,13,10,12,9,11,12,14,12,12,12,9,14,13,12,13,10,6,8,8]
+month_payment_estimate = 1586835
+amount_slip_list=[9,8,13,15,9,14,13,14,14,14,10,11,12,12,11,15,11,13,8,7,10,10,16,12,11,14,12,20,19,22]
+print(sum(amount_slip_list))
 estimate_result = random_generate(month_payment_estimate, amount_slip_list)
 generate_excel(estimate_result, amount_slip_list)
